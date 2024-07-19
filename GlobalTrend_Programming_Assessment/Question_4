@@ -1,0 +1,19 @@
+function AreEqualinletter(str1, str2) {
+  const cleanStrOne = str1.replace(/[^\w]/g, "").toLowerCase();
+  const cleanStrTwo = str2.replace(/[^\w]/g, "").toLowerCase();
+
+  if (cleanStrOne.length !== cleanStrTwo.length) {
+    return false + " Your Both String Length Dosen't Match with Eachother";
+  } else {
+    const sortedStrOne = cleanStrOne.split("").sort().join("");
+    const sortedStrTwo = cleanStrTwo.split("").sort().join("");
+    if (sortedStrOne === sortedStrTwo) {
+      return true + " Your Both String is anagrams of each other";
+    } else {
+      return false + " Your Both String is not anagrams of each other";
+    }
+  }
+}
+
+console.log(AreEqualinletter("Umar", "Ramu"));
+console.log(AreEqualinletter("JavaScript", "Java"));

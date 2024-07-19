@@ -1,0 +1,32 @@
+function StringOperation(StringArgument) {
+  StringArgument = StringArgument.replace(/\s+/g, "");
+
+  let total = 0;
+  let currentNumber = 0;
+  let currentOperator = "+";
+
+  for (let i = 0; i < StringArgument.length; i++) {
+    let Argument = StringArgument[i];
+
+    if (!isNaN(Argument)) {
+      currentNumber = currentNumber * 10 + parseInt(Argument);
+    } else if (Argument === "+" || Argument === "-") {
+      if (currentOperator === "+") {
+        total += currentNumber;
+      } else if (currentOperator === "-") {
+        total -= currentNumber;
+      }
+      currentOperator = Argument;
+      currentNumber = 0;
+    }
+  }
+
+  if (currentOperator === "+") {
+    total += currentNumber;
+  } else if (currentOperator === "-") {
+    total -= currentNumber;
+  }
+
+  return total;
+}
+console.log(StringOperation("30-10"));

@@ -1,0 +1,28 @@
+class HashMapClass {
+  constructor() {
+    this.map = new Map();
+  }
+
+  put(key, value) {
+    this.map.set(key, value);
+  }
+
+  get(key) {
+    return this.map.get(key);
+  }
+
+  remove(key) {
+    this.map.delete(key);
+  }
+}
+
+const myHashMap = new HashMapClass();
+myHashMap.put("name", "Umer");
+myHashMap.put("age", 21);
+
+console.log(myHashMap.get("name"));
+console.log(myHashMap.get("age"));
+
+myHashMap.remove("name");
+console.log(myHashMap.get("name"));
+console.log(myHashMap.get("age"));

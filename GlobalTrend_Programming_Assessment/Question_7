@@ -1,0 +1,12 @@
+function generateNFibonacci(n) {
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+
+  let fibonacciNumbers = [0, 1];
+  for (let i = 2; i < n; i++) {
+    fibonacciNumbers[i] = fibonacciNumbers[i - 1] + fibonacciNumbers[i - 2];
+  }
+  return fibonacciNumbers;
+}
+const fibonacciNumbers = generateNFibonacci(15);
+console.log(fibonacciNumbers);

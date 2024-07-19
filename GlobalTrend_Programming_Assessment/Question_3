@@ -1,0 +1,21 @@
+function ArrayFlatneer(nestedArray) {
+  let result = [];
+  nestedArray.forEach((item) => {
+    if (Array.isArray(item)) {
+      result = result.concat(ArrayFlatneer(item));
+    } else {
+      result.push(item);
+    }
+  });
+
+  return result;
+}
+function ArrayFlatneerwithFlatfun(nestedArray) {
+  return nestedArray.flat(Infinity);
+}
+
+const nestedname = ["U", ["M", ["A", "R"], "K"], "H", ["A", "N"]];
+const flatname = ArrayFlatneer(nestedname);
+const ArrayFlatneerwithFlat = ArrayFlatneerwithFlatfun(nestedname);
+console.log(`${flatname} this is an Reduce Function Array`);
+console.log(`${flatname} this is an flat Function Array`);
